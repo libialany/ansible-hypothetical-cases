@@ -1,0 +1,25 @@
+---
+- hosts: all
+  vars:
+    unnecessary_services:
+      - postfix
+      - telnet
+    unnecessary_software:
+      - tcpdump
+      - nmap-ncat
+      - wpa_supplicant
+  tasks:
+    - name: remove packages
+      package:
+        name: "{{ unnecessary_software }}"
+        state: absent
+      become: yes
+
+    - name: Stop and disable services
+      service:
+        name: "{{ item }}"
+        state: stopped
+        enabled: no
+      become: yes
+      with_items: "{{ unnecessary_services }}"
+      ignore_errors: yes

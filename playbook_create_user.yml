@@ -1,0 +1,21 @@
+---
+- hosts: all
+  tasks:
+    - name: Add local user
+      user:
+        name: deployer
+        password: '$6$4Ie7zkjkNGPMp1UH$g3..9YCotEr26PCXAdYby2hdZPNtP3L6JzS9Rjzwr2JCYkjtnCtZ3BsHm9XzVw818QbDgZ9n2HYDzvPRG.NOR0'
+        system: no
+        group: sudo
+        shell: /bin/bash
+        home: /home/deployer
+        create_home: yes
+        state: present
+    - name: Add to sudoer for deployer user
+      copy:
+        dest: /etc/sudoers.d/deployer
+        src: deployer
+        owner: root
+        group: root
+        mode: 0440
+        validate: /usr/sbin/visudo -csf %s  

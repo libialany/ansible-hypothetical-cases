@@ -1,0 +1,22 @@
+---
+- hosts: all
+  tasks:
+    - name: Set a message of the day
+      copy:
+        dest: /etc/motd
+        src: motd
+        owner: root
+        group: root
+        mode: 0644
+      become: yes
+    - name: Set a login banner
+      copy:
+        dest: "{{ item }}"
+        src: issue
+        owner: root
+        group: root
+        mode: 0644
+      become: yes
+      with_items:
+        - /etc/issue
+        - /etc/issue.net

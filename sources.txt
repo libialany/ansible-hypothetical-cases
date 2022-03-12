@@ -1,0 +1,9 @@
+https://serversforhackers.com/c/create-user-in-ansible
+ansible.builtin.copy – Copy files to remote locations
+Note
+
+Adds or removes SSH authorized keys for particular user accounts.
+
+How to upload ssh public key to as authorized_key using Ansible
+
+Ansible troubleshooting - missing sudo password and incorrect sudo password

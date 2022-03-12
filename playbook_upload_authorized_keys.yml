@@ -1,0 +1,25 @@
+---
+- hosts: all
+  tasks:
+    - name: upload ssh key
+      authorized_key:
+        user: deployer
+        state: present
+        manage_dir: yes
+        key: "{{ lookup('file', '/home/kali/ansible/.ssh/id_rsa.pub') }}"
+    - name: configure ssh server
+      template:
+        src: ssh-setup.j2
+        dest: /etc/ssh/sshd_config
+        owner: root
+        mode: '0600'
+        validate: /usr/sbin/sshd -t -f %s
+        backup: yes
+      
+    - name: restart ssh
+      service:
+        name: sshd
+        state: restarted
+
+
+        
