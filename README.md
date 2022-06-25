@@ -1,6 +1,6 @@
 ## Start to Manage Ansible
 
-_what is Ansible_
+**_what is Ansible_**
 
 
 Ansible is a tool for configuration management and deployment of applications
@@ -13,7 +13,7 @@ Ansible utilities have the capability to control a set of files (directories) to
 **Format** playbooks are in YAML format.
 
 
-_Ansible Concepts_
+**_Ansible Concepts_**
 
 *Control* node any machine with Ansible.
 
@@ -31,3 +31,5 @@ Note: A single task can be executed once with an ad-hoc command.
 **all scripts are explained**: [material](https://github.com/libialany/ansible-hipotetical-cases/blob/main/ebook-Ansible-security.pdf)
 
 ![alt text](https://github.com/libialany/ansible-hipotetical-cases/blob/main/1.PNG)
+
+**Read more** : [Theory](https://sksonukushwaha403.medium.com/ansible-use-cases-and-advantages-f35515ffabe1)
