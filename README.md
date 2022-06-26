@@ -27,6 +27,18 @@ Ansible utilities have the capability to control a set of files (directories) to
 
 Note: A single task can be executed once with an ad-hoc command.
 
+**__Use Case__**
+
+Installing docker and docker-compose
+
+**Playbook:** [playbook-docker-compose.yml](https://github.com/libialany/ansible-hypothetical-cases/blob/main/playbook-docker-compose.yml)
+
+```
+ansible-playbook -i inventory -u root playbook-docker-compose.yml
+```
+
+
+
 
 **all scripts are explained**: [material](https://github.com/libialany/ansible-hipotetical-cases/blob/main/ebook-Ansible-security.pdf)
 
