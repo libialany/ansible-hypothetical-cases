@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  gather_facts: False
+  become: yes
+  vars_prompt:
+    - name: "exit_name"
+      prompt: "Name for output zip and root path(/home/user/bla  or bla) always at end include time and .zip"
+      private: no
+    - name: "backup_folder"
+      prompt: "Which is the folder to backup?(/home/user/bla bla)"
+      private: no
+
+  tasks:
+  - name: Getting timestamp
+    shell: date +'%Y%m%d%H%M%S'
+    register: timestamp_raw
+  - name: Getting name for backup
+    set_fact: timestamp={{ timestamp_raw.stdout }}
+  - name: Ziping files
+    shell: "zip -r {{ exit_name }}_{{timestamp}}.zip  {{ backup_folder }}"
