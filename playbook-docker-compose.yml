@@ -1,5 +1,5 @@
 ---
-- hosts: test
+- hosts: all
   become: yes
   vars:
     admin_user: root
