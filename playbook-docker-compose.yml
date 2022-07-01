@@ -44,7 +44,7 @@
         name: docker
     - name: "Install docker compose"
       apt: 
-      name: docker-compose
+        name: docker-compose
         update_cache: yes
         force_apt_get: yes
 
