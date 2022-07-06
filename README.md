@@ -39,7 +39,7 @@ ansible-playbook -i inventory -u root playbook-docker-compose.yml
 
 *_you want to automate your docker installation_*
 
-setup this part in this playbook :
+setup this part in this playbook [playbook-docker-compose.yml](https://github.com/libialany/ansible-hypothetical-cases/blob/main/playbook-docker-compose.yml):
 
 the hosts machines 
 
