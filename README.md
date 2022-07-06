@@ -37,6 +37,29 @@ Installing docker and docker-compose
 ansible-playbook -i inventory -u root playbook-docker-compose.yml
 ```
 
+*_you want to automate your docker installation_*
+
+setup this part in this playbook :
+
+the hosts machines 
+
+```
+---
+- hosts: localhost
+  connection: local
+  become: yes
+```
+
+the distro GNU/Linux: 
+
+```
+    docker_gpg_url: https://download.docker.com/linux/(CHANGE THIS PART)/gpg
+    docker_repo: deb https://download.docker.com/linux/(CHANGE THIS PART) bullseye stable
+    docker_packges:
+```
+
+
+
 
 
 
