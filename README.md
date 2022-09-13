@@ -50,6 +50,29 @@ the hosts machines
   become: yes
 ```
 
+the become: yes = root user
+
+for a simple case like get environment variables try this:
+
+
+```
+---
+- hosts: localhost
+  connection: local
+```
+
+complete example:
+
+```
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: Basic usage
+      ansible.builtin.debug:
+        msg: "'{{ lookup('ansible.builtin.env', 'MEL') }}' is the HOME environment variable."
+```
+
 the distro GNU/Linux: 
 
 ```
