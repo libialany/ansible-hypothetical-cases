@@ -43,6 +43,8 @@ setup this part in this playbook [playbook-docker-compose.yml](https://github.co
 
 the hosts machines 
 
+**Case install in your own machine**
+
 ```
 ---
 - hosts: localhost
@@ -61,8 +63,8 @@ for a simple case like get environment variables try this:
   connection: local
 ```
 
-complete example:
-
+test with a simple example:
+ 
 ```
 ---
 - hosts: localhost
@@ -73,6 +75,8 @@ complete example:
         msg: "'{{ lookup('ansible.builtin.env', 'MEL') }}' is the HOME environment variable."
 ```
 
+some importantant lines:
+
 the distro GNU/Linux: 
 
 ```
@@ -81,10 +85,20 @@ the distro GNU/Linux:
     docker_packges:
 ```
 
+**Case install in a ec2**
 
+```
+ansible-playbook playbook-docker-compose.yml -u ubuntu
+```
 
+changing some part of the code:
 
-
+```
+---
+- hosts: all
+  become: yes
+  vars:
+```
 
 **all scripts are explained**: [material](https://github.com/libialany/ansible-hipotetical-cases/blob/main/ebook-Ansible-security.pdf)
 
