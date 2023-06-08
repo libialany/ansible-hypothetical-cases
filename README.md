@@ -34,7 +34,7 @@ Installing docker and docker-compose
 **Playbook:** [playbook-docker-compose.yml](https://github.com/libialany/ansible-hypothetical-cases/blob/main/playbook-docker-compose.yml)
 
 ```
-ansible-playbook -i inventory -u root playbook-docker-compose.yml
+ansible-playbook -K playbook-docker-compose.yml
 ```
 
 *_you want to automate your docker installation_*
